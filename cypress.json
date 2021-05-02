@@ -1,0 +1,23 @@
+{ 
+    "baseUrl": "https://demoqa.com",
+    "textBox": "/text-box",
+    "checkBox": "/checkbox",
+    "webTables": "/webtables",
+    "links": "/links",
+    "uploadDownload": "upload-download",
+    "practiceForm": "/automation-practice-form",
+    "browserWindows": "/browser-windows",
+    "datePicker": "/date-picker",
+    "slider": "/slider",
+    "selectMenu":"/select-menu",
+
+    "supportFile": "cypress/support/index.js",
+    "pageLoadTimeout":60000,
+    "defaultCommandTimeout":50000,
+    "responseTimeout":70000,
+    "screenshotOnRunFailure":true,
+    "video": false,
+    "retries": 0,
+    "chromeWebSecurity": false,
+    "testFiles": "**/*.feature"
+}

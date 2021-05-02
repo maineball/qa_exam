@@ -1,0 +1,6 @@
+{
+    "select_value": "Another root option",
+    "select_one": "Other",
+    "old_style": "Violet",
+    "multi_select": ["Black", "Blue"]
+}
