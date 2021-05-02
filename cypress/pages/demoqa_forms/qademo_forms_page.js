@@ -25,11 +25,7 @@ export default class BrowserWindowsPage {
             cy.get(email).type(form.email)
             cy.get(gender).click({force: true})
             cy.get(mobile).type(form.mobile)
-            // cy.get('#datepicker').click()
-            //.type(form.dob)
-            // cy.get(dob).invoke('val').then((text) => {
-            //     expect('01 Jan 1999').to.equal(text);
-            // })
+            cy.get('#datepicker').clear().type(form.dob)
             cy.get(upload).attachFile('picture.jpeg')
             cy.get(submit).type(form.first_name)
             })
@@ -43,17 +39,9 @@ export default class BrowserWindowsPage {
             cy.get('table').contains('td', form.gender)
             cy.get('table').contains('td', form.mobile)
             // cy.get('table').contains('td', form.dob)
+            cy.get('#datepicker').invoke('val').then((text) => {
+                expect('01 Jan 1999').to.equal(text)})
             cy.get('table').contains('td', form.picture)
-
-    // //click the date picker
-    // cy.get('#datepicker').click();
-    // //choose previous month
-    // cy.contains('Prev').click();
-    // //choose next month 
-    // cy.contains('Next').click();
-    // //choose date 24
-    // cy.contains('24').click();
-
             })
     }
 

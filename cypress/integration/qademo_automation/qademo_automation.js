@@ -2,6 +2,7 @@ import { Given, When, Then} from "cypress-cucumber-preprocessor/steps"
 
 import goToPage from "../../pages/links"
 import textboxPage from "../../pages/demoqa_elements/qademo_textbox_page"
+import checkboxPage from "../../pages/demoqa_elements/qademo_checkbox_page"
 import webTablesPage from "../../pages/demoqa_elements/qademo_webtables_page"
 import linksPage from "../../pages/demoqa_elements/qademo_links_page"
 import uploadDownloadPage from "../../pages/demoqa_elements/qademo_upload-download_page"
@@ -62,13 +63,13 @@ Then ('the output should match the populated value', () => {
 
 })
 
-
 Given ('I click the required checkbox', () => {
-    cy.get('button.rct-option rct-option-collapse-all').click()
+    checkboxPage.check_boxes()
+    checkboxPage.validate_check_boxes()
 })
 
 Then ('the checkbox ticked is validated', () => {
-    cy.get('button.rct-option rct-option-collapse-all').click()
+    checkboxPage.validate_check_boxes()
 })
 
 
@@ -108,7 +109,7 @@ Then ('the details are validated', () => {
 })
 
 Then ('the new {word} link is clicked', (link) => {
-    browserWindowsPage.click_links()
+    browserWindowsPage.click_link(link)
 })
 
 Then ('the {} is opened', (link) => {
@@ -130,4 +131,14 @@ Then ('the user populates the field of the selection form', () => {
 Then ('the selection form is validated', () => {
     selectMenuPage.validate_menu_value()
 })
+
+Then ('the date is populated', () => {
+    datePickerPage.select_date()
+})
+
+Then ('the date is validated', () => {
+    datePickerPage.validate_select_date()
+})
+
+
 
