@@ -19,7 +19,8 @@ export default class BrowserWindowsPage {
         }
     }
 
-    static validate_click_link() {
+    static validate_click_link(link) {
+        cy.wait(5000)
     //Accessing windows are not supported in Cypress
     }
 }

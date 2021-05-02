@@ -113,7 +113,7 @@ Then ('the new {word} link is clicked', (link) => {
 })
 
 Then ('the {} is opened', (link) => {
-    browserWindowsPage.click_links()
+    browserWindowsPage.validate_click_link(link)
 })
 
 Then ('the slider value {int} is selected', (value) => {
